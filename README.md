@@ -1,20 +1,3 @@
-# Fabrik Spatial App
-
-The boilerplate is almost the absolute minimum that you need to get React Three Fiber to display a Three.js scene. We will make many additions to the boilerplate as we progress with the lessons.
-
-# Create a project Folder 
-
-Open a command/terminal prompt and create a new folder on your system somewhere.
-
-```mkdir react-three-fiber-boilerplate ```
-
-# CD into the new folder
-
-```cd react-three-fiber-boilerplate```
-
-# Clone the repository 
-```git clone https://github.com/fabrik-space/spatial-app-boilerplate.git```
-
 
 # Setup developemnt environment 
 # VSCode 
@@ -38,6 +21,9 @@ We can also check the version of NPM,
 You want to see no error, but instead a version number equal to, or higher than v8.0.0.
 
 # Run the app
+
+Open terminal in src dircetory (where server.js and data.csv is present )Start node server using  "node server.js" 
+
 Once you have setup the devlopemnt environment, Open the project on VSCode. Make sure you are under the project folder if not ```cd spatial-app-boilerplate```, 
 Now open a new terminal within VScode and install all dependencies using
 
@@ -60,7 +46,10 @@ Checkout from the current main branch to a new branch where you can start making
 Based on the module you start, Replace "your-branch-name" with a preffered branch name and associated task for example :
 ```git checkout -b "module-1/upload-model"```
 
-Once done with changes you can raise a pull request against the main branch and request review
+Once done with changes you can raise a pull request against the main branch and request review'
+
+
+
 
 
 # Digital-Twin-of-Ship-Hull-Corrosion
