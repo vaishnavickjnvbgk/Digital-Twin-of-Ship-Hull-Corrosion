@@ -43,16 +43,16 @@ const loadTextures = async (imagePaths) => {
 };
 
 const imagePaths = [
-  'src/components/Dataset/147_Jan_img1.jpg',
-  'src/components/Dataset/288_Feb_img2.png',
-  'src/components/Dataset/321_Mar_img3.png',
-  'src/components/Dataset/456_Apr_img4.png',
-  'src/components/Dataset/591_May_img5.png',
-  'src/components/Dataset/694_June_img6.png',
-  'src/components/Dataset/738_July_img7.png',
-  'src/components/Dataset/834_Aug_img8.png',
-  'src/components/Dataset/915_Sept_img9.png',
-  'src/components/Dataset/999_Oct_img10.png'
+  '/147_Jan_img1.jpg',
+  '/288_Feb_img2.png',
+  '/321_Mar_img3.png',
+  '/456_Apr_img4.png',
+  '/591_May_img5.png',
+  '/694_June_img6.png',
+  '/738_July_img7.png',
+  '/834_Aug_img8.png',
+  '/915_Sept_img9.png',
+  '/999_Oct_img10.png'
 ];
 
 
@@ -140,7 +140,7 @@ export default function App() {
   }, [currentTextureIndex, model, textures]);
   
   useEffect(() => {
-    loadModel('src/assets/shipp.glb');
+    loadModel('/shipp.glb');
   }, []);
 
   const toggleMeshProperties = () => {
@@ -179,19 +179,19 @@ export default function App() {
     className={`icon ${showMeshProperties ? 'active' : ''}`}
     onClick={toggleMeshProperties}
     title="Mesh Properties">
-    <img src="src/assets/MeshProperties.png" alt="Mesh Properties" />
+    <img src="/MeshProperties.png" alt="Mesh Properties" />
   </div>
   <div
     className={`icon ${showMeshHierarchy ? 'active' : ''}`}
     onClick={toggleMeshHierarchy}
     title="Mesh Hierarchy">
-    <img src="src/assets/MeshHeirarchy.png" alt="Mesh Hierarchy" />
+    <img src="/MeshHeirarchy.png" alt="Mesh Hierarchy" />
   </div>
   <div
     className={`icon ${selectedProperty === 'scene' ? 'active' : ''}`}
     onClick={() => setSelectedProperty(selectedProperty === 'scene' ? null : 'scene')}
     title="Scene and light Properties">
-    <img src="src/assets/Camera.png" alt="Scene Properties" />
+    <img src="/Camera.png" alt="Scene Properties" />
   </div>
 </div>
         {showMeshProperties && selectedMesh && (
