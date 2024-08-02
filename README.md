@@ -25,3 +25,16 @@ Hotspots: Added hotspots to the model.
 Clicking on a hotspot displays its description along with values of resistance and corrosion.
 
 These values are read from a CSV file using APIs.
+
+
+__Instructions for installations and running the project : Refer Wiki Under the Repository name. [Instructions for execution](https://github.com/vaishnavickjnvbgk/Digital-Twin-of-Ship-Hull-Corrosion/wiki/Instructions-for-execution)__
+
+
+# Overview of the Project
+
+<img width="820" alt="1" src="https://github.com/user-attachments/assets/3d083336-18b2-497b-a5eb-81ed3e15673a">
+<img width="815" alt="4" src="https://github.com/user-attachments/assets/08bdc64b-6eb3-4166-a7d1-daea57c5215c">
+<img width="769" alt="3" src="https://github.com/user-attachments/assets/a4108142-aac8-4635-b6f7-0ffe9b23aaee">
+<img width="719" alt="2" src="https://github.com/user-attachments/assets/87c3f430-e19f-4d90-a0d0-6febee892ebf">
+
+
