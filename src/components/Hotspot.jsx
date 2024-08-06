@@ -5,15 +5,28 @@ import { useSpring } from '@react-spring/three';
 import * as THREE from 'three';
 import '/src/App.css';
 
+// Hotspot component to display clickable hotspots on a 3D model
 function Hotspot({ position, text, onCameraFocus }) {
+  // State to handle visibility of the information popup
   const [isInfoVisible, setIsInfoVisible] = useState(false);
+
+  // Access the camera from the Three.js context
   const { camera } = useThree();
   const [targetPosition, setTargetPosition] = useState(null);
+  
+  // State to store resistance data fetched from the API
   const [resistance, setResistance] = useState([]);
+  
+  // State to store corrosion data fetched from the API
   const [corrosion, setCorrosion] = useState([]);
+  
+  // State to store the description of the hotspot
   const [description, setDescription] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
 
+  // State to track the current index for displaying resistance and corrosion data
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+// Descriptions for different hotspot texts
   const descriptions = {
     "Bow Thruster": "Corrosion due to constant exposure and electrochemical reactions with metals.",
     "Waterline": "Susceptible to corrosion from constant wet-dry cycles and marine growth.",
@@ -21,7 +34,8 @@ function Hotspot({ position, text, onCameraFocus }) {
     "Propeller": "Vulnerable to galvanic corrosion from differing metals in seawater.",
     "Keel": "Corrosion occurs due to prolonged seawater exposure and mechanical stress."
   };
-
+  
+// Handle the click event on the hotspot
   const handleClick = () => {
     const newTargetPosition = new THREE.Vector3(...position);
     setTargetPosition(newTargetPosition);
@@ -32,6 +46,7 @@ function Hotspot({ position, text, onCameraFocus }) {
     setDescription(descriptions[text] || '');
   };
 
+  // Fetch CSV data from the API
   const fetchCSVData = useCallback(() => {
     return new Promise((resolve, reject) => {
       fetch('http://localhost:5001/api/data')
@@ -45,7 +60,8 @@ function Hotspot({ position, text, onCameraFocus }) {
         .catch(error => reject(error));
     });
   }, []);
-
+  
+// Effect to fetch and set resistance and corrosion data when info is visible
   useEffect(() => {
     if (isInfoVisible) {
       fetchCSVData()
@@ -89,6 +105,7 @@ function Hotspot({ position, text, onCameraFocus }) {
     }
   }, [isInfoVisible, text, fetchCSVData]);
 
+  // Effect to update the current index for resistance and corrosion data every 5 seconds
   useEffect(() => {
     let intervalId;
     if (isInfoVisible) {
@@ -99,6 +116,7 @@ function Hotspot({ position, text, onCameraFocus }) {
     return () => clearInterval(intervalId);
   }, [isInfoVisible, resistance]);
 
+  // Spring animation properties for camera movement
   const [springProps, api] = useSpring(() => ({
     cameraPosition: camera.position,
     lookAtPosition: camera.position,
@@ -112,6 +130,7 @@ function Hotspot({ position, text, onCameraFocus }) {
     }
   }));
 
+  // Effect to update the camera position when targetPosition changes
   useEffect(() => {
     if (targetPosition) {
       api.start({
