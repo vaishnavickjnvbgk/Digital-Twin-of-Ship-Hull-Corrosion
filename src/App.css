@@ -1,8 +1,8 @@
 * {
-  box-sizing: border-box;
+  box-sizing: border-box;  /*padding and borders are specified*/
 }
 
-html,
+html,  /*Applies full width and height, removes default margin and padding,sets up touch and user-select properties*/
 body,
 #root {
   width: 100%;
@@ -22,7 +22,7 @@ body,
   overflow: hidden;
 }
 
-body {
+body {  /*Fixes the body position, prevents scrolling, and sets font and background properties*/
   position: fixed;
   overflow: hidden;
   overscroll-behavior-y: none;
@@ -39,13 +39,13 @@ body {
   bottom: 0 !important;
 }
 
-.app-container {
+.app-container {  /*flexbox container that takes up the full viewport-height n width*/
   display: flex;
   height: 100vh;
   width: 100vw;
 }
 
-.controls h3 {
+.controls h3 {  /*Removes top margin and setting a transparent background*/
   margin-top: 0;
   background-color: transparent;
 }
@@ -57,28 +57,28 @@ body {
 }
 
 .controls .control-group input[type="checkbox"],
-.controls .control-group select {
+.controls .control-group select {  /*Styles checkboxes and select elements,adding a left margin and a transparent background*/
   margin-left: 10px;
   background-color: transparent;
 }
 
-.controls .control-group input[type="range"] {
+.controls .control-group input[type="range"] { /*Styles range input elements,width:100% n transparent background*/
   width: 100%;
   background-color: transparent;
 }
 
-.canvas-container {
+.canvas-container {  /*Ensuring the container for the canvas element takes up the full width and height of its parent*/
   width: 100%;
   height: 100%;
 }
 
-canvas {
+canvas {  /*Take full width and height, display as a block element*/
   width: 100%;
   height: 100%;
   display: block;
 }
 
-.icon img {
+.icon img {  /*Styles images for the icons, setting their width, height, margins, and border radius.*/
   width: 50px;
   height: 50px;
   margin-bottom: 1px;
@@ -88,21 +88,21 @@ canvas {
   border-radius: 70px;
 }
 
-.icon:hover {
+.icon:hover {  /*Changes the background color of the icon to gray when hovered over*/
   background-color: #ccc;
 }
 
-.icon.active {
+.icon.active {  /*Changes the background color of the icon to DarkGray when active*/
   background-color: #bbb;
   border: 2px solid rgb(0, 0, 0);
 }
 
-#mesh-properties,
+#mesh-properties,  /*Adds margin*/
 #mesh-hierarchy {
   margin-top: 20px;
 }
 
-.controls {
+.controls {  /* Styles for the controls container */
   width: 20%;
   padding: 10px;
   background-color: transparent;
@@ -111,17 +111,17 @@ canvas {
   align-items: flex-start;
   position: absolute;
   z-index: 10;
-  opacity: 1;
-  pointer-events: auto;
+  opacity: 1;  /* Full opacity */
+  pointer-events: auto;  /* Allow pointer events (clicks, hovers, etc.) */
 }
 
-.controls .control-group {
+.controls .control-group {  /* Styles for control groups inside elements with the class .controls */
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.icon-container {
+.icon-container {  /* Styles for the container holding icon elements */
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -130,7 +130,7 @@ canvas {
   gap: 30px;
 }
 
-.icon {
+.icon {  /* Styles for elements with the class .icon */
   width: 60px;
   height: 60px;
   background-color: #ddd;
@@ -143,12 +143,12 @@ canvas {
   border: 3px solid transparent;
 }
 
-.icon span {
+.icon span {  /* Styles for span elements inside elements with the class .icon */
   font-size: 14px;
   text-align: center;
 }
 
-.fancy-button {
+.fancy-button {  /* General styles for .fancy-button used for Progressive Corrosion button*/
   background: linear-gradient(45deg, #e8e2ee 30%, #8fb6dc 90%);
   border-radius: 5px;
   color: rgb(12, 12, 12);
@@ -165,12 +165,12 @@ canvas {
   left: 5px;   
 }
 
-.fancy-button:hover {
+.fancy-button:hover {  /* Styles for .fancy-button when the mouse pointer is over it */
   background: linear-gradient(45deg, #8fb6dc 30%, #e8e2ee 90%);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.fancy-button:active {
+.fancy-button:active {  /* Styles for .fancy-button when the 'Show Progressive Corrosion' button is being clicked*/
   transform: scale(0.95);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
